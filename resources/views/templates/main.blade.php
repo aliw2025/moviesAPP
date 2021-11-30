@@ -11,9 +11,9 @@
 <body class="font-sans bg-gray-900 text-white">
     <nav class="border-b border-gray-800 ">
         {{-- flex with space between --}}
-        <div class="container mx-auto  py-6 flex item-center justify-between">
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row item-center justify-between ">
             {{-- left items --}}
-            <div class="flex">
+            <div class="flex flex-col mx-auto md:flex-row">
                 {{-- branding --}}
                 <div class="branding flex ">
                     <a href="#"> <img class="w-10"
@@ -25,21 +25,21 @@
                     </div>
                 </div>
                 {{-- navigation --}}
-                <ul class="flex item-center">
-                    <li class="ml-16 hover:text-gray-300">
+                <ul class="flex flex-col text-center md:flex-row item-center">
+                    <li class="md:ml-16 hover:text-gray-300">
                         <a href="#">Movies</a>
                     </li>
-                    <li class="ml-6 hover:text-gray-300">
+                    <li class="md:ml-6 hover:text-gray-300">
                         <a href="#">TV shows</a>
                     </li>
-                    <li class="ml-6 hover:text-gray-300">
+                    <li class="md:ml-6 hover:text-gray-300">
                         <a href="#">Actors</a>
                     </li>
                 </ul>
             </div>
 
             {{-- right items --}}
-            <div class="flex item-center ">
+            <div class="flex mx-auto item-center ">
                 <input type="text" class="bg-gray-800 rounded-full w-64 h-10 px-4 py-1" placeholder="Search">
                 <div class="ml-4">
                     <img class="w-8 rounded-full " src="/images/profile.jpg" alt="">
