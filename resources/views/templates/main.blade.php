@@ -13,9 +13,9 @@
         {{-- flex with space between --}}
         <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row item-center justify-between ">
             {{-- left items --}}
-            <div class="flex flex-col mx-auto md:flex-row">
+            <div class="flex flex-col mx-auto md:mx-0 md:flex-row">
                 {{-- branding --}}
-                <div class="branding flex ">
+                <div class="branding flex mx-auto md:mx-0">
                     <a href="#"> <img class="w-10"
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy1CyUxMIs5v3tYBDghCdlN_cFJFp0upbqBQ&usqp=CAU"
                             alt=""></a>
@@ -25,21 +25,21 @@
                     </div>
                 </div>
                 {{-- navigation --}}
-                <ul class="flex flex-col text-center md:flex-row item-center">
-                    <li class="md:ml-16 hover:text-gray-300">
+                <ul class="flex  p-4 md:p-0 text-center md:flex-row item-center">
+                    <li class="md:ml-16 p-2 hover:text-gray-300">
                         <a href="#">Movies</a>
                     </li>
-                    <li class="md:ml-6 hover:text-gray-300">
+                    <li class="md:ml-6 p-2 hover:text-gray-300">
                         <a href="#">TV shows</a>
                     </li>
-                    <li class="md:ml-6 hover:text-gray-300">
+                    <li class="md:ml-6 p-2 hover:text-gray-300">
                         <a href="#">Actors</a>
                     </li>
                 </ul>
             </div>
 
             {{-- right items --}}
-            <div class="flex mx-auto item-center ">
+            <div class="flex mx-auto md:mx-0 item-center ">
                 <input type="text" class="bg-gray-800 rounded-full w-64 h-10 px-4 py-1" placeholder="Search">
                 <div class="ml-4">
                     <img class="w-8 rounded-full " src="/images/profile.jpg" alt="">
