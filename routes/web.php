@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MoviesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 Route::get('/about', function () {
     return view('about');
 });
@@ -24,4 +24,6 @@ Route::get('/show', function () {
 });
 Route::get('/test', function () {
     return view('testmovie');
-});
+}); 
+Route::get('/', [MoviesController::class ,'index'])->name('movies.index');
+Route::get('/movies/{movie}', [MoviesController::class ,'show'])->name('movies.show');

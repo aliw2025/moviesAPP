@@ -20,8 +20,8 @@
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy1CyUxMIs5v3tYBDghCdlN_cFJFp0upbqBQ&usqp=CAU"
                             alt=""></a>
                     <div class="ml-2 branding text-pink-300 font-bold text-xl    ">
-                        <a href="#">MoviesApp</a>
-
+                        <a href={{route('movies.index')}} >MoviesApp</a>
+                        <!-- <a href="/">MoviesApp</a> -->
                     </div>
                 </div>
                 {{-- navigation --}}
@@ -53,3 +53,4 @@
 </body>
 
 </html>
+<!-- https://api.themoviedb.org/3/movie/550?api_key=2bd360f927a0cc6ebbdf4b0a1ed86d82 -->
