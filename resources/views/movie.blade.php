@@ -4,22 +4,26 @@
 <div class="container mx-auto movie-info border-b border-gray-800">
     <div class="container px-4 py-16 flex flex-col md:flex-row ">
         <div class="continer">
-            <img src="/images/joker.jpg" alt="">
+            <img src="https://image.tmdb.org/t/p/w500/{{$movie['poster_path']}}" alt="">
         </div>
 
 
         <div class="md:ml-24 pt-4 md:pt-0 container">
             <h2 class="text-4xl font-semibold">
-                Joker (2019)
+                {{$movie['original_title']}}
             </h2>
             <div class="pt-2 flex  item-center text-gray-400 text-sm">
                 <span>Star </span>
-                <span class="ml-1">85%</span>
+                <span class="ml-1">{{ $movie['vote_average'] * 10 . '%' }}</span>
                 <span class="mx-2">|</span>
-                <span>feb 20 ,2020</span>
+                <span>{{ \carbon\carbon::parse($movie['release_date'])->format('M d,Y')}}</span>
                 <span class="mx-2">|</span>
                 <span>
-                    Action, Thriller , Comedy
+                    @foreach ($movie['genres'] as $genre)
+                {{ $genre['name'] }}
+                @if (!$loop->last){{ ',' }}
+                @endif
+            @endforeach
                 </span>
             </div>
             <p class="mt-8 text-gray-300">

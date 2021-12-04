@@ -19,9 +19,9 @@ use App\Http\Controllers\MoviesController;
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/show', function () {
-    return view('movie');
-});
+// Route::get('/show', function () {
+//     return view('movie');
+// });
 Route::get('/test', function () {
     return view('testmovie');
 }); 

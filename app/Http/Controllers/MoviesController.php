@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 
@@ -12,13 +13,24 @@ class MoviesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        
-        $popular = Http::get("https://api.themoviedb.org/3/movie/popular?api_key=2bd360f927a0cc6ebbdf4b0a1ed86d82")->json()['results']; 
+    {
+        $apiKey = '2bd360f927a0cc6ebbdf4b0a1ed86d82';
+
+        $popular = Http::get("https://api.themoviedb.org/3/movie/popular?api_key=" . $apiKey)->json()['results'];
         // dd($popular);       
         // dd(count($popular));
-
-        return view('index',['popularMovies'=> $popular]);
+        $genreArray = Http::get("https://api.themoviedb.org/3/genre/movie/list?api_key={$apiKey}&language=en-US")
+            ->json('genres');
+        
+        // dump($popular);
+        $genres = collect($genreArray)->mapWithKeys(function ($genre) {
+            return [$genre['id'] => $genre['name']];
+        });
+        //dump($genres);
+        return view('index', [
+            'popularMovies' => $popular,
+            'genres' => $genres
+        ]);
     }
 
     /**
@@ -50,7 +62,13 @@ class MoviesController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $apiKey = '2bd360f927a0cc6ebbdf4b0a1ed86d82';
+        https://api.themoviedb.org/3/movie/{movie_id}?api_key=2bd360f927a0cc6ebbdf4b0a1ed86d82&language=en-US
+        $movie = Http::get("https://api.themoviedb.org/3/movie/{$id}?api_key={$apiKey}")->json();
+        // dd($movie);
+       dump($movie);
+        return view('movie',['movie'=>$movie]);
     }
 
     /**
