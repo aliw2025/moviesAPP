@@ -35,14 +35,17 @@
             <div class="mt-12">
                 <div class="text-white font-semibold">Featured Cast</div>
                 <div class="flex mt-4">
-                    <div>
-                        <div>Bong joon-ho</div>
-                        <div class="text-sm test-gray-400">Screenplay , Director ,Story</div>
+                    @foreach ($movie['credits']['crew'] as $crew)
+                    @if ($loop->index <2)
+                    <div class="mr-8">
+                       
+                        <div>{{$crew['name']}}</div>
+                        <div class="text-sm test-gray-400">{{$crew['job']}} </div>
+                       
                     </div>
-                    <div class="ml-8">
-                        <div>Han jin-won</div>
-                        <div class="text-sm test-gray-400">Screenplay </div>
-                    </div>
+                    @endif
+                    @endforeach
+                    
                 </div>
             </div>
             <button class="mt-8 bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 border border-yellow-700 rounded">
@@ -60,52 +63,26 @@
         <!-- grid of items -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5  gap-8">
             <!-- item  -->
-            <div class="mt-8">
-                <a href="#">
-                    <img  class="hover:opacity-75 " src="/images/actor1.jpg" alt="">
-                </a>
-                <div class="mt-2">
-                    <a class="mt-2 text-lg hover:text-gray-300">
-                       Real name
+            @foreach ($movie['credits']['cast'] as $actor)
+                @if ($loop->index<10)
+                <div class="mt-8">
+                    <a href="#">
+                        <img  class="hover:opacity-75 " src="https://image.tmdb.org/t/p/w500/{{$actor['profile_path']}}" alt="">
                     </a>
-                    
-                    <div class="text-gray-400 text-sm">
-                        Tom cruise
+                    <div class="mt-2">
+                        <a class="mt-2 text-lg hover:text-gray-300">
+                         Real name
+                        </a>
+                        
+                        <div class="text-gray-400 text-sm">
+                            {{$actor['name']}}
+                        </div>
+    
                     </div>
-
                 </div>
-            </div>
-            <!-- item  -->
-            <div class="mt-8">
-                <a href="#">
-                    <img  class="hover:opacity-75 " src="/images/actor2.jpg" alt="">
-                </a>
-                <div class="mt-2">
-                    <a class="mt-2 text-lg hover:text-gray-300">
-                       Real name
-                    </a>
-                    
-                    <div class="text-gray-400 text-sm">
-                        Tom cruise
-                    </div>
-
-                </div>
-            </div>
-            <div class="mt-8">
-                <a href="#">
-                    <img  class="hover:opacity-75 " src="/images/actor3.jpg" alt="">
-                </a>
-                <div class="mt-2">
-                    <a class="mt-2 text-lg hover:text-gray-300">
-                       Real name
-                    </a>
-                    
-                    <div class="text-gray-400 text-sm">
-                        Tom cruise
-                    </div>
-
-                </div>
-            </div>
+                @endif
+            @endforeach
+        
         </div>
 </div>
 <!-- images section -->
@@ -116,52 +93,21 @@
         <!-- grid of items -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3   gap-8">
             <!-- item  -->
+            @foreach ($movie['images']['backdrops'] as $image)
             <div class="mt-8">
+                @if ($loop->index <6)
                 <a href="#">
-                    <img  class="hover:opacity-75 " src="/images/image1.jpg" alt="">
+                    <img  class="hover:opacity-75 " src="https://image.tmdb.org/t/p/w500/{{$image['file_path']}}" alt="">
                 </a>
-                <div class="mt-2">
-                    <a class="mt-2 text-lg hover:text-gray-300">
-                       Real name
-                    </a>
-                    
-                    <div class="text-gray-400 text-sm">
-                        Tom cruise
-                    </div>
-
-                </div>
+                @endif
+               
+               
             </div>
+            @endforeach
+            
             <!-- item  -->
-            <div class="mt-8">
-                <a href="#">
-                    <img  class="hover:opacity-75 " src="/images/image2.jpg" alt="">
-                </a>
-                <div class="mt-2">
-                    <a class="mt-2 text-lg hover:text-gray-300">
-                       Real name
-                    </a>
-                    
-                    <div class="text-gray-400 text-sm">
-                        Tom cruise
-                    </div>
-
-                </div>
-            </div>
-            <div class="mt-8">
-                <a href="#">
-                    <img  class="hover:opacity-75 " src="/images/image3.jpg" alt="">
-                </a>
-                <div class="mt-2">
-                    <a class="mt-2 text-lg hover:text-gray-300">
-                       Real name
-                    </a>
-                    
-                    <div class="text-gray-400 text-sm">
-                        Tom cruise
-                    </div>
-
-                </div>
-            </div>
+            
+            
         </div>
 </div>
 @endsection
