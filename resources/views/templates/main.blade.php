@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/css/app.css" rel="stylesheet">
     <title>Document</title>
+    @livewireStyles
 </head>
 <body class="font-sans bg-gray-900 text-white">
     <nav class="border-b border-gray-800 ">
@@ -39,17 +40,18 @@
             </div>
 
             {{-- right items --}}
-            <div class="flex mx-auto md:mx-0 item-center ">
-                <input type="text" class="bg-gray-800 rounded-full w-64 h-10 px-4 py-1" placeholder="Search">
-                <div class="ml-4">
-                    <img class="w-8 rounded-full " src="/images/profile.jpg" alt="">
+            <div class="flex mx-auto md:mx-0 item-center  ">
+                @livewire('search-dropdown')
+                <div class="ml-4 ">
+                    <img class="w-8 rounded-full object-center  " src="/images/profile.jpg" alt="">
                 </div>
             </div>
 
         </div>
     </nav>
     @yield('content')
-   
+    @livewireScripts
+    
 </body>
 
 </html>
