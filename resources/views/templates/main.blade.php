@@ -12,21 +12,21 @@
 <body class="font-sans bg-gray-900 text-white">
     <nav class="border-b border-gray-800 ">
         {{-- flex with space between --}}
-        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row item-center justify-between ">
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between ">
             {{-- left items --}}
             <div class="flex flex-col mx-auto md:mx-0 md:flex-row">
                 {{-- branding --}}
-                <div class="branding flex mx-auto md:mx-0">
+                <div class="branding flex mx-auto md:mx-0 items-center">
                     <a href="#"> <img class="w-10"
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy1CyUxMIs5v3tYBDghCdlN_cFJFp0upbqBQ&usqp=CAU"
                             alt=""></a>
                     <div class="ml-2 branding text-pink-300 font-bold text-xl    ">
-                        <a href={{route('movies.index')}} >MoviesApp</a>
+                        <a href={{route('movies.index')}} >Movies</a>
                         <!-- <a href="/">MoviesApp</a> -->
                     </div>
                 </div>
                 {{-- navigation --}}
-                <ul class="flex  p-4 md:p-0 text-center md:flex-row item-center">
+                <ul class="flex  p-4 md:p-0 text-center md:flex-row items-center">
                     <li class="md:ml-16 p-2 hover:text-gray-300">
                         <a href="#">Movies</a>
                     </li>
@@ -40,7 +40,7 @@
             </div>
 
             {{-- right items --}}
-            <div class="flex mx-auto md:mx-0 item-center  ">
+            <div class="flex mx-auto md:mx-0 items-center  ">
                 @livewire('search-dropdown')
                 <div class="ml-4 ">
                     <img class="w-8 rounded-full object-center  " src="/images/profile.jpg" alt="">
