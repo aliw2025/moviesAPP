@@ -67,7 +67,7 @@ class MoviesController extends Controller
         https://api.themoviedb.org/3/movie/{movie_id}?api_key=2bd360f927a0cc6ebbdf4b0a1ed86d82&language=en-US
         $movie = Http::get("https://api.themoviedb.org/3/movie/{$id}?api_key={$apiKey}&append_to_response=videos,images,credits")->json();
         // dd($movie);
-       dump($movie);
+    //    dump($movie);
         return view('movie',['movie'=>$movie]);
     }
 
